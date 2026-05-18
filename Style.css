@@ -1,0 +1,327 @@
+
+/* =========================
+   GOOGLE FONTS
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+:root {
+    --verde-escuro: #1b4332;
+    --verde-hover: #2d6a4f;
+    --verde-claro: #95d5b2;
+    --amarelo-suave: #f4d35e;
+    --cinza-claro: #f8f9fa;
+    --branco: #ffffff;
+    --texto: #2d3748;
+    --sombra: 0 8px 20px rgba(0, 0, 0, 0.08);
+    --transicao: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cinza-claro);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    background-color: var(--verde-escuro);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2 {
+    color: var(--branco);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.menu-lista {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.menu-lista a {
+    text-decoration: none;
+    color: var(--branco);
+    font-weight: 500;
+    transition: var(--transicao);
+}
+
+.menu-lista a:hover {
+    color: var(--amarelo-suave);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+            rgba(27, 67, 50, 0.75),
+            rgba(27, 67, 50, 0.75)
+        ),
+        url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1400&auto=format&fit=crop')
+        center/cover no-repeat;
+    color: var(--branco);
+    text-align: center;
+}
+
+.hero-conteudo {
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero-subtitulo {
+    max-width: 750px;
+    margin: 0 auto 35px;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+.btn-cta,
+#btn-calcular {
+    display: inline-block;
+    background-color: var(--amarelo-suave);
+    color: var(--verde-escuro);
+    padding: 14px 28px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.btn-cta:hover,
+#btn-calcular:hover {
+    background-color: #ffd60a;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   TÍTULOS DAS SEÇÕES
+========================= */
+.secao-titulo {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.secao-titulo h2 {
+    font-size: 2.2rem;
+    color: var(--verde-escuro);
+}
+
+/* =========================
+   PILARES
+========================= */
+.pilares {
+    padding: 100px 0;
+}
+
+.cards-pilares {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card-pilar {
+    background-color: var(--branco);
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+    text-align: center;
+    transition: var(--transicao);
+}
+
+.card-pilar:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.icone-pilar {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.card-pilar h3 {
+    color: var(--verde-escuro);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.card-pilar p {
+    font-size: 0.96rem;
+    color: #4a5568;
+}
+
+/* =========================
+   SIMULADOR
+========================= */
+.simulador {
+    padding: 100px 0;
+    background-color: #edf6f9;
+}
+
+.form-simulador {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--branco);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.campo-formulario label {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--verde-escuro);
+}
+
+.campo-formulario input {
+    padding: 14px;
+    border: 2px solid #dcdcdc;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: var(--transicao);
+}
+
+.campo-formulario input:focus {
+    outline: none;
+    border-color: var(--verde-claro);
+    box-shadow: 0 0 0 4px rgba(149, 213, 178, 0.3);
+}
+
+#resultado {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--verde-escuro);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+@media (max-width: 992px) {
+    .cards-pilares {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu-lista {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .cards-pilares {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero-subtitulo {
+        font-size: 1rem;
+    }
+
+    .form-simulador {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .secao-titulo h2 {
+        font-size: 1.8rem;
+    }
+
+    .btn-cta,
+    #btn-calcular {
+        width: 100%;
+        text-align: center;
+    }
+}

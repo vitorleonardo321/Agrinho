@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agro Forte, Futuro Sustentável</title>
+
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <h2>AgroForte</h2>
+            </div>
+
+            <nav class="menu-navegacao">
+                <ul class="menu-lista">
+                    <li><a href="#pilares">Tecnologia</a></li>
+                    <li><a href="#hero">Sustentabilidade</a></li>
+                    <li><a href="#simulador">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+
+        <section id="hero" class="hero">
+            <div class="container hero-conteudo">
+                <h1>Agro Forte, Futuro Sustentável</h1>
+
+                <p class="hero-subtitulo">
+                    Produzir alimentos com eficiência e responsabilidade,
+                    promovendo o equilíbrio entre desenvolvimento agrícola
+                    e preservação ambiental.
+                </p>
+
+                <a href="#pilares" class="btn-cta">
+                    Conheça nossas práticas
+                </a>
+            </div>
+        </section>
+
+        <!-- PILARES -->
+        <section id="pilares" class="pilares">
+            <div class="container">
+
+                <div class="secao-titulo">
+                    <h2>Nossos Pilares Sustentáveis</h2>
+                </div>
+
+                <div class="cards-pilares">
+
+                    <article class="card-pilar">
+                        <div class="icone-pilar">
+                            <i>🌾</i>
+                        </div>
+
+                        <h3>Agricultura de Precisão</h3>
+
+                        <p>
+                            Uso inteligente de tecnologia para otimizar recursos,
+                            reduzir desperdícios e aumentar a produtividade no campo.
+                        </p>
+                    </article>
+
+                    <article class="card-pilar">
+                        <div class="icone-pilar">
+                            <i>💧</i>
+                        </div>
+
+                        <h3>Preservação de Nascentes</h3>
+
+                        <p>
+                            Proteção das fontes de água para garantir equilíbrio
+                            ecológico e sustentabilidade para futuras gerações.
+                        </p>
+                    </article>
+
+                    <article class="card-pilar">
+                        <div class="icone-pilar">
+                            <i>♻️</i>
+                        </div>
+
+                        <h3>Economia Circular (Biogás)</h3>
+
+                        <p>
+                            Transformação de resíduos orgânicos em energia limpa,
+                            promovendo reaproveitamento e redução de impactos ambientais.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SIMULADOR -->
+        <section id="simulador" class="simulador">
+            <div class="container">
+
+                <div class="secao-titulo">
+                    <h2>Simulador de Produtividade Sustentável</h2>
+                </div>
+
+                <form class="form-simulador">
+                    <div class="campo-formulario">
+                        <label for="hectares">
+                            Hectares de Plantação
+                        </label>
+
+                        <input
+                            type="number"
+                            id="hectares"
+                            name="hectares"
+                            placeholder="Digite a quantidade de hectares"
+                            min="1"
+                            required
+                        />
+                    </div>
+
+                    <button type="submit" id="btn-calcular">
+                        Calcular Impacto
+                    </button>
+                </form>
+
+                <div id="resultado"></div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                &copy; 2026 AgroForte. Todos os direitos reservados.
+            </p>
+
+            <p>
+                Projeto desenvolvido com inspiração no Concurso Agrinho.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JS Externo -->
+    <script src="script.js"></script>
+
+</body>
+</html>
