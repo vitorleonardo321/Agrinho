@@ -1,155 +1,734 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agro Forte, Futuro Sustentável</title>
 
-    <!-- CSS Externo -->
-    <link rel="stylesheet" href="style.css" />
+<head>
+
+    <!-- =========================================================
+         META TAGS E CONFIGURAÇÕES GLOBAIS
+    ========================================================== -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#123524">
+
+    <meta name="description"
+          content="EcoAgro — Plataforma premium de agricultura inteligente, sustentabilidade rural e tecnologia ESG para o agronegócio do futuro.">
+
+    <meta name="keywords"
+          content="agro tecnologia, ESG, agricultura inteligente, IA agrícola, sustentabilidade rural, agronegócio sustentável, drones agrícolas, carbono neutro">
+
+    <meta name="author"
+          content="EcoAgro">
+
+    <!-- =========================================================
+         OPEN GRAPH
+    ========================================================== -->
+    <meta property="og:title"
+          content="EcoAgro — Agro Forte e Futuro Sustentável">
+
+    <meta property="og:description"
+          content="Tecnologia, inteligência artificial e sustentabilidade impulsionando o novo agronegócio brasileiro.">
+
+    <meta property="og:type"
+          content="website">
+
+    <meta property="og:image"
+          content="assets/og-image.jpg">
+
+    <meta property="og:locale"
+          content="pt_BR">
+
+    <!-- =========================================================
+         FAVICON
+    ========================================================== -->
+    <link rel="icon"
+          href="assets/favicon.ico"
+          type="image/x-icon">
+
+    <!-- =========================================================
+         PRELOAD DE FONTES
+    ========================================================== -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <!-- =========================================================
+         GOOGLE FONTS
+    ========================================================== -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- =========================================================
+         CSS
+    ========================================================== -->
+    <link rel="stylesheet"
+          href="style.css">
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+    <script src="script.js" defer></script>
+
+    <!-- =========================================================
+         TITLE
+    ========================================================== -->
+    <title>
+        EcoAgro — Agro Forte e Futuro Sustentável
+    </title>
+
 </head>
+
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo">
-                <h2>AgroForte</h2>
+    <!-- =========================================================
+         HEADER FIXO PREMIUM
+    ========================================================== -->
+    <header id="main-header"
+            class="glass-header"
+            aria-label="Cabeçalho principal">
+
+        <div class="container header-wrapper">
+
+            <!-- =========================================
+                 LOGO
+            ========================================== -->
+            <a href="#hero"
+               class="logo-container"
+               aria-label="Página inicial EcoAgro">
+
+                <div class="logo-icon">
+
+                    <svg width="52"
+                         height="52"
+                         viewBox="0 0 100 100"
+                         aria-hidden="true">
+
+                        <circle cx="50"
+                                cy="50"
+                                r="46"
+                                fill="#39b54a">
+                        </circle>
+
+                        <path d="M32 56C32 42 44 28 68 28C68 52 55 70 36 72"
+                              stroke="#FFFFFF"
+                              stroke-width="6"
+                              fill="none"
+                              stroke-linecap="round">
+                        </path>
+
+                    </svg>
+
+                </div>
+
+                <div class="logo-text-group">
+
+                    <span class="logo-title">
+                        EcoAgro
+                    </span>
+
+                    <span class="logo-subtitle">
+                        Inteligência sustentável para o agro do futuro
+                    </span>
+
+                </div>
+
+            </a>
+
+            <!-- =========================================
+                 NAVEGAÇÃO
+            ========================================== -->
+            <nav class="nav-container"
+                 aria-label="Menu principal">
+
+                <ul class="nav-links">
+
+                    <li><a href="#hero">Início</a></li>
+
+                    <li><a href="#tecnologias">Tecnologia</a></li>
+
+                    <li><a href="#solucoes">Soluções</a></li>
+
+                    <li><a href="#pilares">Sustentabilidade</a></li>
+
+                    <li><a href="#impacto">Impacto</a></li>
+
+                    <li><a href="#contato">Contato</a></li>
+
+                </ul>
+
+            </nav>
+
+            <!-- =========================================
+                 CTA HEADER
+            ========================================== -->
+            <div class="header-actions">
+
+                <a href="#cta-final"
+                   class="btn-header-cta"
+                   aria-label="Falar com especialistas EcoAgro">
+
+                    Fale com Especialistas
+                </a>
+
+                <!-- MENU MOBILE -->
+                <button class="menu-toggle"
+                        aria-label="Abrir menu mobile"
+                        aria-expanded="false"
+                        aria-controls="mobile-navigation">
+
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+
+                </button>
+
             </div>
 
-            <nav class="menu-navegacao">
-                <ul class="menu-lista">
-                    <li><a href="#pilares">Tecnologia</a></li>
-                    <li><a href="#hero">Sustentabilidade</a></li>
-                    <li><a href="#simulador">Dashboard</a></li>
-                </ul>
-            </nav>
         </div>
+
     </header>
 
-    <!-- HERO -->
+    <!-- =========================================================
+         MAIN
+    ========================================================== -->
     <main>
 
-        <section id="hero" class="hero">
-            <div class="container hero-conteudo">
-                <h1>Agro Forte, Futuro Sustentável</h1>
+        <!-- =====================================================
+             HERO SECTION
+        ====================================================== -->
+        <section id="hero"
+                 class="hero-section">
 
-                <p class="hero-subtitulo">
-                    Produzir alimentos com eficiência e responsabilidade,
-                    promovendo o equilíbrio entre desenvolvimento agrícola
-                    e preservação ambiental.
-                </p>
+            <!-- Overlay -->
+            <div class="hero-overlay"></div>
 
-                <a href="#pilares" class="btn-cta">
-                    Conheça nossas práticas
-                </a>
+            <!-- Partículas -->
+            <div class="hero-particles"
+                 aria-hidden="true"></div>
+
+            <!-- Background Visual -->
+            <div class="hero-background-media"
+                 aria-hidden="true">
+
+                <img src="assets/hero-agro.jpg"
+                     alt="Plantação tecnológica sustentável"
+                     loading="lazy">
+
             </div>
-        </section>
 
-        <!-- PILARES -->
-        <section id="pilares" class="pilares">
-            <div class="container">
+            <div class="container hero-container">
 
-                <div class="secao-titulo">
-                    <h2>Nossos Pilares Sustentáveis</h2>
-                </div>
+                <div class="hero-content">
 
-                <div class="cards-pilares">
+                    <!-- BADGE -->
+                    <div class="hero-badge">
 
-                    <article class="card-pilar">
-                        <div class="icone-pilar">
-                            <i>🌾</i>
-                        </div>
+                        <span>
+                            Plataforma ESG • IA Agrícola • Carbono Inteligente
+                        </span>
 
-                        <h3>Agricultura de Precisão</h3>
-
-                        <p>
-                            Uso inteligente de tecnologia para otimizar recursos,
-                            reduzir desperdícios e aumentar a produtividade no campo.
-                        </p>
-                    </article>
-
-                    <article class="card-pilar">
-                        <div class="icone-pilar">
-                            <i>💧</i>
-                        </div>
-
-                        <h3>Preservação de Nascentes</h3>
-
-                        <p>
-                            Proteção das fontes de água para garantir equilíbrio
-                            ecológico e sustentabilidade para futuras gerações.
-                        </p>
-                    </article>
-
-                    <article class="card-pilar">
-                        <div class="icone-pilar">
-                            <i>♻️</i>
-                        </div>
-
-                        <h3>Economia Circular (Biogás)</h3>
-
-                        <p>
-                            Transformação de resíduos orgânicos em energia limpa,
-                            promovendo reaproveitamento e redução de impactos ambientais.
-                        </p>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- SIMULADOR -->
-        <section id="simulador" class="simulador">
-            <div class="container">
-
-                <div class="secao-titulo">
-                    <h2>Simulador de Produtividade Sustentável</h2>
-                </div>
-
-                <form class="form-simulador">
-                    <div class="campo-formulario">
-                        <label for="hectares">
-                            Hectares de Plantação
-                        </label>
-
-                        <input
-                            type="number"
-                            id="hectares"
-                            name="hectares"
-                            placeholder="Digite a quantidade de hectares"
-                            min="1"
-                            required
-                        />
                     </div>
 
-                    <button type="submit" id="btn-calcular">
-                        Calcular Impacto
-                    </button>
-                </form>
+                    <!-- TÍTULO -->
+                    <h1 class="hero-title">
 
-                <div id="resultado"></div>
+                        O Futuro do Agronegócio
+                        Nasce da União Entre
+                        Inteligência Artificial
+                        e Sustentabilidade.
+
+                    </h1>
+
+                    <!-- SUBTÍTULO -->
+                    <p class="hero-description">
+
+                        A EcoAgro conecta monitoramento satelital,
+                        automação agrícola, análise preditiva
+                        e práticas regenerativas para transformar
+                        produtividade rural em impacto ambiental positivo.
+
+                    </p>
+
+                    <!-- BOTÕES -->
+                    <div class="hero-actions">
+
+                        <a href="#tecnologias"
+                           class="btn-primary">
+
+                            Conhecer Tecnologias
+                        </a>
+
+                        <a href="#impacto"
+                           class="btn-secondary">
+
+                            Ver Impacto Sustentável
+                        </a>
+
+                    </div>
+
+                    <!-- MÉTRICAS HERO -->
+                    <div class="hero-stats">
+
+                        <article class="hero-stat-item">
+
+                            <strong>+42%</strong>
+
+                            <span>
+                                Eficiência hídrica operacional
+                            </span>
+
+                        </article>
+
+                        <article class="hero-stat-item">
+
+                            <strong>-31%</strong>
+
+                            <span>
+                                Emissões de carbono reduzidas
+                            </span>
+
+                        </article>
+
+                        <article class="hero-stat-item">
+
+                            <strong>+18 mil</strong>
+
+                            <span>
+                                Hectares monitorados por IA
+                            </span>
+
+                        </article>
+
+                    </div>
+
+                </div>
 
             </div>
+
+        </section>
+
+        <!-- =====================================================
+             SOBRE
+        ====================================================== -->
+        <section id="sobre"
+                 class="section-padding">
+
+            <div class="container sobre-wrapper">
+
+                <!-- COLUNA ESQUERDA -->
+                <div class="sobre-content hidden-element">
+
+                    <span class="section-label">
+                        Quem Somos
+                    </span>
+
+                    <h2 class="section-title">
+
+                        Transformando o Campo
+                        em um Ecossistema Inteligente,
+                        Sustentável e Conectado.
+
+                    </h2>
+
+                    <p>
+
+                        A EcoAgro atua na integração entre
+                        inteligência artificial, automação agrícola,
+                        sustentabilidade ambiental e gestão de dados
+                        para construir propriedades rurais mais
+                        produtivas, resilientes e eficientes.
+
+                    </p>
+
+                    <p>
+
+                        Nosso modelo tecnológico reduz desperdícios,
+                        aumenta previsibilidade operacional,
+                        fortalece cadeias sustentáveis e impulsiona
+                        o Brasil como potência global em agricultura
+                        de baixo carbono.
+
+                    </p>
+
+                </div>
+
+                <!-- COLUNA DIREITA -->
+                <aside class="sobre-aside hidden-element">
+
+                    <!-- MISSÃO -->
+                    <article class="sobre-card">
+
+                        <div class="sobre-icon"></div>
+
+                        <h3>Missão</h3>
+
+                        <p>
+
+                            Democratizar tecnologias sustentáveis
+                            capazes de aumentar produtividade rural
+                            preservando recursos naturais.
+
+                        </p>
+
+                    </article>
+
+                    <!-- VISÃO -->
+                    <article class="sobre-card">
+
+                        <div class="sobre-icon"></div>
+
+                        <h3>Visão</h3>
+
+                        <p>
+
+                            Liderar a evolução do agro inteligente
+                            na América Latina através de inovação
+                            ambiental e inteligência operacional.
+
+                        </p>
+
+                    </article>
+
+                    <!-- ESG -->
+                    <article class="sobre-card">
+
+                        <div class="sobre-icon"></div>
+
+                        <h3>Compromisso ESG</h3>
+
+                        <p>
+
+                            Construir uma agricultura regenerativa,
+                            transparente e preparada para metas
+                            globais de carbono neutro.
+
+                        </p>
+
+                    </article>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             TECNOLOGIAS
+        ====================================================== -->
+        <section id="tecnologias"
+                 class="section-padding">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-label">
+                        Ecossistema Tecnológico
+                    </span>
+
+                    <h2 class="section-title">
+
+                        Tecnologias que Redefinem
+                        o Agronegócio Brasileiro
+
+                    </h2>
+
+                </div>
+
+                <!-- GRID -->
+                <div class="tech-grid">
+
+                    <!-- CARD -->
+                    <article class="tech-card"
+                             data-tech="ia-agricola">
+
+                        <div class="tech-icon"></div>
+
+                        <h3>IA Agrícola</h3>
+
+                        <p>
+
+                            Modelos preditivos capazes de antecipar
+                            produtividade, clima, doenças e decisões
+                            operacionais em tempo real.
+
+                        </p>
+
+                        <ul class="tech-benefits">
+
+                            <li>Análise preditiva</li>
+                            <li>Automação estratégica</li>
+                            <li>Monitoramento inteligente</li>
+
+                        </ul>
+
+                        <a href="#"
+                           class="tech-link">
+
+                            Saiba mais
+                        </a>
+
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="tech-card"
+                             data-tech="satelite">
+
+                        <div class="tech-icon"></div>
+
+                        <h3>Sensoriamento por Satélite</h3>
+
+                        <p>
+
+                            Imagens multiespectrais para análise
+                            climática, umidade, vegetação e saúde
+                            agrícola em larga escala.
+
+                        </p>
+
+                        <ul class="tech-benefits">
+
+                            <li>Mapeamento inteligente</li>
+                            <li>Detecção precoce</li>
+                            <li>Dados geoespaciais</li>
+
+                        </ul>
+
+                        <a href="#"
+                           class="tech-link">
+
+                            Saiba mais
+                        </a>
+
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="tech-card"
+                             data-tech="drones">
+
+                        <div class="tech-icon"></div>
+
+                        <h3>Drones Autônomos</h3>
+
+                        <p>
+
+                            Equipamentos automatizados para inspeção,
+                            pulverização seletiva e monitoramento
+                            agrícola de alta precisão.
+
+                        </p>
+
+                        <ul class="tech-benefits">
+
+                            <li>Aplicação otimizada</li>
+                            <li>Redução de custos</li>
+                            <li>Alta eficiência operacional</li>
+
+                        </ul>
+
+                        <a href="#"
+                           class="tech-link">
+
+                            Saiba mais
+                        </a>
+
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="tech-card"
+                             data-tech="irrigacao">
+
+                        <div class="tech-icon"></div>
+
+                        <h3>Irrigação Inteligente</h3>
+
+                        <p>
+
+                            Controle automatizado baseado em sensores,
+                            clima e análise de evapotranspiração.
+
+                        </p>
+
+                        <ul class="tech-benefits">
+
+                            <li>Uso racional da água</li>
+                            <li>Automação hídrica</li>
+                            <li>Eficiência energética</li>
+
+                        </ul>
+
+                        <a href="#"
+                           class="tech-link">
+
+                            Saiba mais
+                        </a>
+
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="tech-card"
+                             data-tech="big-data">
+
+                        <div class="tech-icon"></div>
+
+                        <h3>Big Data Rural</h3>
+
+                        <p>
+
+                            Integração massiva de dados agrícolas
+                            para decisões estratégicas baseadas
+                            em inteligência operacional.
+
+                        </p>
+
+                        <ul class="tech-benefits">
+
+                            <li>Business intelligence</li>
+                            <li>Insights estratégicos</li>
+                            <li>Gestão preditiva</li>
+
+                        </ul>
+
+                        <a href="#"
+                           class="tech-link">
+
+                            Saiba mais
+                        </a>
+
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="tech-card"
+                             data-tech="blockchain">
+
+                        <div class="tech-icon"></div>
+
+                        <h3>Blockchain Agrícola</h3>
+
+                        <p>
+
+                            Transparência e rastreabilidade total
+                            da cadeia produtiva com segurança digital.
+
+                        </p>
+
+                        <ul class="tech-benefits">
+
+                            <li>Rastreabilidade ESG</li>
+                            <li>Segurança de dados</li>
+                            <li>Certificação inteligente</li>
+
+                        </ul>
+
+                        <a href="#"
+                           class="tech-link">
+
+                            Saiba mais
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
         </section>
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <p>
-                &copy; 2026 AgroForte. Todos os direitos reservados.
-            </p>
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+    <footer id="contato">
+
+        <div class="container footer-wrapper">
+
+            <div class="footer-brand">
+
+                <h2>EcoAgro</h2>
+
+                <p>
+
+                    Inteligência sustentável para alimentar
+                    o futuro do planeta com responsabilidade,
+                    tecnologia e inovação agrícola.
+
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Links Rápidos</h3>
+
+                <ul>
+
+                    <li><a href="#">Política de Privacidade</a></li>
+
+                    <li><a href="#">Termos de Uso</a></li>
+
+                    <li><a href="#">Governança ESG</a></li>
+
+                    <li><a href="#">Relatórios Climáticos</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-newsletter">
+
+                <h3>Newsletter</h3>
+
+                <p>
+
+                    Receba insights sobre tecnologia,
+                    sustentabilidade e inovação no agro.
+
+                </p>
+
+                <form class="newsletter-form">
+
+                    <input type="email"
+                           placeholder="Seu melhor e-mail"
+                           aria-label="Digite seu e-mail">
+
+                    <button type="submit">
+
+                        Assinar
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
 
             <p>
-                Projeto desenvolvido com inspiração no Concurso Agrinho.
+
+                © 2026 EcoAgro — Todos os direitos reservados.
+
             </p>
+
+            <span>
+
+                O futuro do agro será inteligente,
+                regenerativo e sustentável.
+
+            </span>
+
         </div>
+
     </footer>
 
-    <!-- JS Externo -->
-    <script src="script.js"></script>
-
 </body>
+
 </html>
