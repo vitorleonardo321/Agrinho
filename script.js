@@ -1,175 +1,223 @@
-/**
- * ECOAGRO - LANDING PAGE INTERATIVA
- * Script para "Agro Forte e Futuro Sustentável"
- * * Desenvolvido exclusivamente com JavaScript Puro (Vanilla JS).
- * Foco em performance, acessibilidade e otimização de renderização.
- */
+// ======================================
+// DATABASE SIMULADO
+// ======================================
 
-(function () {
-    'use strict';
+const db = {
 
-    // Aguarda o DOM estar totalmente carregado para iniciar os módulos
-    document.addEventListener('DOMContentLoaded', () => {
-        initMenuMobile();
-        initScrollReveal();
-        initContadoresAnimados();
-        initCardsAcordeao();
-    });
+culturas:[
 
-    /**
-     * MODULE 1: Menu Mobile Responsivo
-     * Controla a abertura e fechamento do menu em dispositivos móveis.
-     */
-    function initMenuMobile() {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
+{
+nome:"Soja",
+producao:"170 milhões de toneladas",
+descricao:"Principal commodity agrícola brasileira."
+},
 
-        // Validação preventiva para evitar erros caso o elemento não exista em alguma página
-        if (!menuToggle || !navLinks) return;
+{
+nome:"Milho",
+producao:"130 milhões de toneladas",
+descricao:"Base da alimentação animal."
+},
 
-        menuToggle.addEventListener('click', (event) => {
-            // Evita comportamentos padrão de clique caso seja um link/botão interno
-            event.preventDefault();
-            
-            // Altera o estado de ativação do menu
-            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
-            
-            // Alterna a classe que dispara a transição suave no CSS
-            navLinks.classList.toggle('active');
-        });
+{
+nome:"Café",
+producao:"65 milhões de sacas",
+descricao:"Liderança mundial."
+},
 
-        // Fecha o menu automaticamente ao clicar em qualquer link interno (UX de navegação)
-        const links = navLinks.querySelectorAll('a');
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', 'false');
-            });
-        });
-    }
+{
+nome:"Trigo",
+producao:"12 milhões de toneladas",
+descricao:"Expansão produtiva."
+}
 
-    /**
-     * MODULE 2: Scroll Reveal (Animação de Entrada)
-     * Detecta a rolagem da página de forma performática usando IntersectionObserver.
-     */
-    function initScrollReveal() {
-        const hiddenElements = document.querySelectorAll('.hidden-element');
-        
-        if (hiddenElements.length === 0) return;
+],
 
-        // Configurações do observador de interseção
-        const observerOptions = {
-            root: null, // Usa a viewport do navegador como referência
-            rootMargin: '0px',
-            threshold: 0.15 // Dispara a animação quando 15% do elemento estiver visível
-        };
+noticias:[
 
-        const revealCallback = (entries, observer) => {
-            entries.forEach(entry => {
-                // Se o elemento entrou na área visível da tela
-                if (entry.isIntersecting) {
-                    // Adiciona a classe CSS que executa a transição de fade/slide
-                    entry.target.classList.add('show-element');
-                    // Remove o elemento do observador para não gastar processamento repetidas vezes
-                    observer.unobserve(entry.target);
-                }
-            });
-        };
+{
+id:1,
+titulo:"Exportações agrícolas batem novo recorde",
+categoria:"Mercado",
+likes:0
+},
 
-        const observer = new IntersectionObserver(revealCallback, observerOptions);
+{
+id:2,
+titulo:"IA aumenta produtividade em fazendas",
+categoria:"Tecnologia",
+likes:0
+},
 
-        // Vincula todos os elementos escondidos ao observador
-        hiddenElements.forEach(element => observer.observe(element));
-    }
+{
+id:3,
+titulo:"Novos drones revolucionam pulverização",
+categoria:"Tecnologia",
+likes:0
+},
 
-    /**
-     * MODULE 3: Contadores Numéricos Animados
-     * Faz os números de impacto subirem de 0 ao alvo de forma fluída.
-     */
-    function initContadoresAnimados() {
-        const metricsContainer = document.querySelector('.metrics-container');
-        const counters = document.querySelectorAll('.counter-number');
+{
+id:4,
+titulo:"Mercado de soja apresenta alta",
+categoria:"Mercado",
+likes:0
+}
 
-        if (!metricsContainer || counters.length === 0) return;
+]
 
-        // Função responsável por fazer a contagem progressiva individual
-        const dispararContagem = (counter) => {
-            // Converte o valor do atributo string "data-target" para número absoluto
-            const target = +counter.getAttribute('data-target');
-            const duracaoTotal = 2000; // Tempo total da animação em milissegundos (2 segundos)
-            const frameRate = 1000 / 60; // Baseado em aproximadamente 60 frames por segundo
-            const totalPassos = duracaoTotal / frameRate;
-            const incremento = target / totalPassos;
+};
 
-            let valorAtual = 0;
+// ======================================
+// PRODUÇÃO AGRÍCOLA
+// ======================================
 
-            const atualizarNumero = () => {
-                valorAtual += incremento;
+const culturasContainer =
+document.getElementById("culturasContainer");
 
-                if (valorAtual < target) {
-                    // Atualiza o texto aproximando para o número inteiro mais próximo
-                    counter.innerText = Math.ceil(valorAtual).toLocaleString('pt-BR');
-                    // Recursividade otimizada via requestAnimationFrame (garante suavidade de tela)
-                    requestAnimationFrame(atualizarNumero);
-                } else {
-                    // Garante que o número termine exatamente no valor final alvo
-                    counter.innerText = target.toLocaleString('pt-BR');
-                }
-            };
+db.culturas.forEach(cultura=>{
 
-            atualizarNumero();
-        };
+culturasContainer.innerHTML += `
+<div class="card reveal">
+<h3>${cultura.nome}</h3>
+<p>${cultura.descricao}</p>
+<strong>${cultura.producao}</strong>
+</div>
+`;
 
-        // Observer dedicado para disparar a animação apenas quando a seção de métricas estiver na tela
-        const metricsObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Dispara a contagem para cada um dos números
-                    counters.forEach(counter => dispararContagem(counter));
-                    // Desativa o observer para evitar re-animações ao subir/descer a página
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.3 }); // Exige 30% da seção visível para iniciar
+});
 
-        metricsObserver.observe(metricsContainer);
-    }
+// ======================================
+// NOTÍCIAS
+// ======================================
 
-    /**
-     * MODULE 4: Cards Acordeão/Expansíveis
-     * Gerencia a expansão e o fechamento dinâmico dos detalhes dos pilares agroecológicos.
-     */
-    function initCardsAcordeao() {
-        const cards = document.querySelectorAll('.card-pilar');
+const newsContainer =
+document.getElementById("newsContainer");
 
-        if (cards.length === 0) return;
+function loadNews(){
 
-        cards.forEach(card => {
-            card.addEventListener('click', () => {
-                const extraContent = card.querySelector('.card-extra');
-                
-                if (!extraContent) return;
+newsContainer.innerHTML="";
 
-                // Verifica se o card clicado já está ativo
-                const estaAtivo = extraContent.classList.contains('active');
+db.noticias.forEach(news=>{
 
-                // COMPORTAMENTO ACORDEÃO: Fecha todos os outros antes de abrir o atual
-                cards.forEach(outroCard => {
-                    const outroConteudo = outroCard.querySelector('.card-extra');
-                    if (outroConteudo && outroConteudo !== extraContent) {
-                        outroConteudo.classList.remove('active');
-                    }
-                });
+newsContainer.innerHTML += `
+<div class="card">
 
-                // Alterna o estado do card atual
-                if (estaAtivo) {
-                    extraContent.classList.remove('active');
-                } else {
-                    extraContent.classList.add('active');
-                }
-            });
-        });
-    }
+<h3>${news.titulo}</h3>
 
-})();
+<p>
+Categoria:
+${news.categoria}
+</p>
+
+<button onclick="likeNews(${news.id})">
+👍 ${news.likes}
+</button>
+
+</div>
+`;
+
+});
+
+}
+
+loadNews();
+
+function likeNews(id){
+
+const item =
+db.noticias.find(n=>n.id===id);
+
+item.likes++;
+
+loadNews();
+
+saveData();
+}
+
+// ======================================
+// LOCAL STORAGE
+// ======================================
+
+function saveData(){
+
+localStorage.setItem(
+"agroDB",
+JSON.stringify(db)
+);
+
+}
+
+// ======================================
+// DARK MODE
+// ======================================
+
+document
+.getElementById("themeBtn")
+.addEventListener("click",()=>{
+
+document.body.classList.toggle("dark");
+
+});
+
+// ======================================
+// SCROLL REVEAL
+// ======================================
+
+const reveals =
+document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll",()=>{
+
+reveals.forEach(item=>{
+
+const top =
+item.getBoundingClientRect().top;
+
+if(top < window.innerHeight - 100){
+
+item.classList.add("active");
+
+}
+
+});
+
+});
+
+// ======================================
+// FORMULÁRIO
+// ======================================
+
+document
+.getElementById("contactForm")
+.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+alert(
+"Mensagem enviada com sucesso!"
+);
+
+});
+
+// ======================================
+// PARTÍCULAS NATURAIS
+// ======================================
+
+const particles =
+document.querySelector(".particles");
+
+for(let i=0;i<50;i++){
+
+const leaf =
+document.createElement("span");
+
+leaf.classList.add("leaf");
+
+leaf.style.left =
+Math.random()*100+"%";
+
+leaf.style.animationDuration =
+5 + Math.random()*10 + "s";
+
+particles.appendChild(leaf);
+
+}
